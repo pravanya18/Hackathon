@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Header from './components/Header';
+import ESGBenchmarkDoc from './components/ESGBenchmarkDoc';
+import ESGBenchMarkDocument from './components/ESGBenchMarkDocument';
+import PDFUrl from './components/PDFUrl';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+    <>
+    <BrowserRouter>
+    <Header/>
+    <Routes>
+      <Route index element={ <ESGBenchmarkDoc/>}></Route>
+      <Route path="/doc" element={ <ESGBenchMarkDocument/>}></Route>
+      <Route path="/pdf" element={  <PDFUrl/>}></Route>
+    </Routes>
+    </BrowserRouter>
+    </>
   );
 }
 

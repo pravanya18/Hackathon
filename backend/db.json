@@ -1,0 +1,311 @@
+{
+    "data": [
+        {
+            "id": "ceo",
+            "name": "CEO",
+            "children": [
+                {
+                    "name": "Manager",
+                    "attributes": {
+                        "Department": "Production",
+                        "isFullTime": true,
+                        "weeklyHours": 80
+                    },
+                    "children": [
+                        {
+                            "name": "Foreman",
+                            "attributes": {
+                                "Department": "Fabrication"
+                            },
+                            "children": [
+                                {
+                                    "name": "Workers"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Foreman",
+                            "attributes": {
+                                "Department": "Assembly"
+                            },
+                            "children": [
+                                {
+                                    "name": "Workers"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Manager",
+                    "attributes": {
+                        "Department": "Marketing",
+                        "isFullTime": true,
+                        "weeklyHours": 80
+                    },
+                    "children": [
+                        {
+                            "name": "Sales Officer",
+                            "attributes": {
+                                "Department": "A"
+                            },
+                            "children": [
+                                {
+                                    "name": "Salespeople"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sales Officer",
+                            "attributes": {
+                                "Department": "B"
+                            },
+                            "children": [
+                                {
+                                    "name": "Salespeople"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Manager",
+                    "attributes": {
+                        "Department": "Marketing",
+                        "isFullTime": true,
+                        "weeklyHours": 80
+                    },
+                    "children": [
+                        {
+                            "name": "Sales Officer",
+                            "attributes": {
+                                "Department": "A"
+                            },
+                            "children": [
+                                {
+                                    "name": "Salespeople"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sales Officer",
+                            "attributes": {
+                                "Department": "B"
+                            },
+                            "children": [
+                                {
+                                    "name": "Salespeople"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Manager",
+                    "attributes": {
+                        "Department": "Marketing",
+                        "isFullTime": true,
+                        "weeklyHours": 80
+                    },
+                    "children": [
+                        {
+                            "name": "Sales Officer",
+                            "attributes": {
+                                "Department": "A"
+                            },
+                            "children": [
+                                {
+                                    "name": "Salespeople"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sales Officer",
+                            "attributes": {
+                                "Department": "B"
+                            },
+                            "children": [
+                                {
+                                    "name": "Salespeople"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Manager",
+                    "attributes": {
+                        "Department": "Marketing",
+                        "isFullTime": true,
+                        "weeklyHours": 80
+                    },
+                    "children": [
+                        {
+                            "name": "Sales Officer",
+                            "attributes": {
+                                "Department": "A"
+                            },
+                            "children": [
+                                {
+                                    "name": "Salespeople"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Sales Officer",
+                            "attributes": {
+                                "Department": "B"
+                            },
+                            "children": [
+                                {
+                                    "name": "Salespeople"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+          "id": "esgResponse",
+          "esgResponse": [
+            {
+              "entityName": "string",
+              "benchmarkDetails": [
+                {
+                  "question": "ESG Risk Rating for MSCI",
+                  "esgType": "ESGScore",
+                  "esgIndicators": "MSCISustainalytics",
+                  "primaryDetails": "true",
+                  "secondaryDetails": "abc",
+                  "citationDetails": "string",
+                  "pageNumber": 0
+                },
+                {
+                  "question": "what is net zero target",
+                  "esgType": "Environment",
+                  "esgIndicators": "NetZeroTarget",
+                  "primaryDetails": "true",
+                  "secondaryDetails": "def",
+                  "citationDetails": "string",
+                  "pageNumber": 1
+                },
+                {
+                  "question": "what is the interim emission reduction target",
+                  "esgType": "Environment",
+                  "esgIndicators": "InterimEmissionsReductionTarget",
+                  "primaryDetails": "",
+                  "secondaryDetails": "ghi",
+                  "citationDetails": "string",
+                  "pageNumber": 2
+                },
+                {
+                  "question": "what is the Renewable Electricity Target",
+                  "esgType": "Environment",
+                  "esgIndicators": "RenewableElectricityTarget",
+                  "primaryDetails": "true",
+                  "secondaryDetails": "klm",
+                  "citationDetails": "string",
+                  "pageNumber": 3
+                },
+                {
+                  "question": "what is the Circularity Stratergy & targets",
+                  "esgType": "Environment",
+                  "esgIndicators": "CircularityStratergy",
+                  "primaryDetails": "",
+                  "secondaryDetails": "nop",
+                  "citationDetails": "string",
+                  "pageNumber": 4
+                },
+                {
+                  "question": "what is the Diversity, Equity and Inclusion target",
+                  "esgType": "Social",
+                  "esgIndicators": "DE&ITarget",
+                  "primaryDetails": "true",
+                  "secondaryDetails": "string",
+                  "citationDetails": "string",
+                  "pageNumber": 5
+                },
+                {
+                  "question": "what is the employee health and Safety audit target",
+                  "esgType": "Goverance",
+                  "esgIndicators": "HealthAndSafetyTarget",
+                  "primaryDetails": "",
+                  "secondaryDetails": "string",
+                  "citationDetails": "string",
+                  "pageNumber": 6
+                },
+            {
+                  "question": "what is supply audit target",
+                  "esgType": "Goverance",
+                  "esgIndicators": "SuppluAuditTarget",
+                  "primaryDetails": "",
+                  "secondaryDetails": "string",
+                  "citationDetails": "string",
+                  "pageNumber": 7
+                },
+                {
+                  "question": "what is the SBTi rating",
+                  "esgType": "Reporting",
+                  "esgIndicators": "SBTi",
+                  "primaryDetails": "true",
+                  "secondaryDetails": "string",
+                  "citationDetails": "string",
+                  "pageNumber": 8
+                },
+                {
+                  "question": "what is the CDP rating",
+                  "esgType": "Reporting",
+                  "esgIndicators": "CDP",
+                  "primaryDetails": "",
+                  "secondaryDetails": "string",
+                  "citationDetails": "string",
+                  "pageNumber": 9
+                },
+                {
+                  "question": "what is the GRI rating",
+                  "esgType": "Reporting",
+                  "esgIndicators": "GRI",
+                  "primaryDetails": "",
+                  "secondaryDetails": "string",
+                  "citationDetails": "string",
+                  "pageNumber": 10
+                },
+                {
+                  "question": "what is the SASB rating",
+                  "esgType": "Reporting",
+                  "esgIndicators": "SASB",
+                  "primaryDetails": "",
+                  "secondaryDetails": "string",
+                  "citationDetails": "string",
+                  "pageNumber": 11
+                },
+                {
+                  "question": "what is the TCFD rating",
+                  "esgType": "Reporting",
+                  "esgIndicators": "TCFD",
+                  "primaryDetails": "",
+                  "secondaryDetails": "string",
+                  "citationDetails": "string",
+                  "pageNumber": 12
+                },
+                {
+                  "question": "is the entity focussing on ESG assurance",
+                  "esgType": "Reporting",
+                  "esgIndicators": "Assurance",
+                  "primaryDetails": "",
+                  "secondaryDetails": "string",
+                  "citationDetails": "string",
+                  "pageNumber": 13
+                }
+              ],
+              "metrics": {
+                "timeTaken": 0,
+                "leveragedModel": "string",
+            "f1Score": 0
+              }
+            }
+          ]
+        }
+    ]
+}
