@@ -306,6 +306,33 @@
               }
             }
           ]
-        }
+        },
+        {
+            "id": "pdfUrlPath",
+            "pdfUrlPath": "%PDF-1.73 0 obj<<< /Type /Group /S /Transparency /CS /DeviceRGB >> /Resources 2 0 R/Contents 4 0 R>> endobj4 0 obj<> streamx��R=o�0��+��=|vL�R���l�-��ځ,���Ge�JK����{���Y5�����Z˯k�vf�a��`G֢ۢ��Asf�z�ͼ��`%��aI#�!;�t���GD?!���<�����B�b��        00000 n 0000000703 00000 n 0000000820 00000 n 0000000926 00000 n 0000001206 00000 n 0000001649 00000 n trailer << /Size 11 /Root 10 0 R /Info 9 0 R >>startxref2015%%EOF"
+            
+        },
+        {
+            "id": "esgResponseIndicator",
+            "esgResponse": [
+              {
+                "entityName": "string",
+                "benchmarkDetails": {
+                  "question": "string",
+                  "esgType": "ESGScore",
+                  "esgIndicators": "string",
+                  "primaryDetails": "string",
+                  "secondaryDetails": "string",
+                  "citationDetails": "string",
+                  "pageNumber": 0
+                },
+                "Metrics": {
+                  "timeTaken": 0,
+                  "leveragedModel": "string",
+                  "f1Score": 0
+                }
+              }
+            ]
+          }
     ]
 }

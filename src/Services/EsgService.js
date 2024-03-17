@@ -6,6 +6,14 @@ class EsgService {
     getEsgBenchmarkDoc(esg){
        return axios.get("http://localhost:3200/data/esgResponse", esg);
     }
+
+    getPdfUrl(esg){
+        return axios.get("http://localhost:3200/data/pdfUrlPath", esg);
+     }
+
+     getEsgBenchmarkIndicator(esg){
+        return axios.get("http://localhost:3200/data/esgResponseIndicator", esg);
+     }
     
 }
 

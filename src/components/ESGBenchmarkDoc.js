@@ -2,36 +2,31 @@
 
 import { useState } from "react";
 import EsgService from "../Services/EsgService";
+import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import CheckIcon from '@mui/icons-material/Check';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
+import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
+
 
 
   
-  const rows = [
-  {name:'Frozen yoghurt', calories:159, fat:6.0, carb:24, protein:4.0},
-  {name:'Ice cream sandwich',calories: 237,fat: 9.0,carb: 37,protein: 4.3},
-  {name:'Eclair',calories: 262,fat: 16.0,carb: 24,protein: 6.0,},
-  {name:'Cupcake',calories: 305,fat: 3.7,carb: 67,protein: 4.3,},
-  {name:'Gingerbread',calories: 356,fat: 16.0,carb: 49,protein: 3.9,}
-  ];
-  
 
-function ESGBenchmarkDoc() {
+function ESGBenchmarkDoc({esgData, setEsgData, loading, setLoading}) {
 
     const [esg, setEsg] = useState({
         entityName: "",
         fileName:"",
     })
 
-    const [esgData, setEsgData] = useState([])
+    // const [loading, setLoading] =useState();
+
+    // const [esgData, setEsgData] = useState([])
 
     const handleChange = (e) => {
       const value = e.target.value;
@@ -39,9 +34,10 @@ function ESGBenchmarkDoc() {
       console.log(" esg"+ esg.entityName +"  "+ esg.fileName +" esg " + esg);
     };
 
-    const getEsgBenchmarkDoc = (e) => {
+    const  getEsgBenchmarkDoc = async (e) => {
        e.preventDefault();
-       EsgService.getEsgBenchmarkDoc(esg).
+       setLoading(true);
+       await EsgService.getEsgBenchmarkDoc(esg).
        then((response) => 
        {
         console.log("response "+JSON.stringify(response.data.esgResponse[0]));
@@ -49,9 +45,30 @@ function ESGBenchmarkDoc() {
         console.log("use state esgdata "+ JSON.stringify(esgData));
        }).
         catch((error) => {console.log("error "+ error)})
+      setLoading(false);
     };
 
     const navigate = useNavigate();
+
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+      // [`&.${tableCellClasses.head}`]: {
+      //   backgroundColor: theme.palette.common.black,
+      //   color: theme.palette.common.white,
+      // },
+      [`&.${tableCellClasses.body}`]: {
+        fontSize: 14,
+      },
+    }));
+    
+    const StyledTableRow = styled(TableRow)(({ theme }) => ({
+      '&:nth-of-type(odd)': {
+        backgroundColor: theme.palette.action.hover,
+      },
+      // hide last border
+      '&:last-child td, &:last-child th': {
+        border: 0,
+      },
+    }));
 
     return (
         <>
@@ -60,64 +77,19 @@ function ESGBenchmarkDoc() {
         <input type="text" name="entityName" value={esg.entityName} onChange={(e) => handleChange(e)}/>
         <p />
         <label>Upload file : </label>
-        <input type="file" name="fileName" value={esg.fileName} onChange={(e) => handleChange(e)} style={{padding: "4px 8px", backgroundColor: "#53c68c", borderRadius:"16px"}}/>
+        <input type="file" name="fileName" value={esg.fileName} onChange={(e) => handleChange(e)} style={{padding: "4px 8px", backgroundColor: "#1976d2", borderRadius:"16px"}}/>
+        {/* <FilePicker/> */}
         <p />
-        <button onClick={getEsgBenchmarkDoc} style={{padding: "4px 8px", backgroundColor: "#53c68c", borderRadius:"16px", borderStyle: "none"}}>Get ESG Doc</button>
+        {/* <button onClick={getEsgBenchmarkDoc} style={{padding: "4px 8px", backgroundColor: "#53c68c", borderRadius:"16px", borderStyle: "none"}}>Get ESG Doc</button> */}
+        <Button onClick={getEsgBenchmarkDoc} disabled={esg.entityName==="" || esg.fileName===""} variant="contained">Get ESG Doc</Button>
+        {/* <Button onClick={()=> navigate("/indicator")} variant="contained">Get ESG Indicator</Button> */}
+  
+        {/* <Button onClick={()=> navigate("/pdf")} variant="contained">Get PDF URL</Button> */}
+      
       </div>
-      <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 750 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Company</TableCell>
-            <TableCell align="center">MSCI Sustainalytics</TableCell>
-            <TableCell align="center">Net zero target</TableCell>
-            <TableCell align="center">Interim Emissions Reduction Target</TableCell>
-            <TableCell align="center">Remewable Electricity Target</TableCell>
-            <TableCell align="center">Circularity Stratagies and Target</TableCell>
-            <TableCell align="center">Diversity Equity and Inclusion Target</TableCell>
-            <TableCell align="center">Employee health and safety audits</TableCell>
-            <TableCell align="center">Supply Chain Audits</TableCell>
-            <TableCell align="center">SBTi</TableCell>
-            <TableCell align="center">CDP</TableCell>
-            <TableCell align="center">GRI</TableCell>
-            <TableCell align="center">SASB</TableCell>
-            <TableCell align="center">TCFD</TableCell>
-            <TableCell align="center">Assurance</TableCell>
-            <TableCell align="center">ESG benchmark document</TableCell>
-            <TableCell align="center">get PDF URL</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {esgData.map((data) => (
-            <TableRow
-              key={data.entityName}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {data.entityName}
-              </TableCell>
-              {data.benchmarkDetails.map((details) => (
-                <TableCell align="right">
-                  {/* {""+details.pageNumber + "\n" } */}
-                  {details.primaryDetails =="true"?<CheckIcon color="success"/>: <FiberManualRecordIcon  style={{fontSize: "10px", color:"red"}}/>}
-                  <p/>
-                  {"\n"+details.secondaryDetails}
-                 
-                </TableCell>
-              ))}
-              <TableCell> 
-                <button onClick={getEsgBenchmarkDoc} style={{padding: "4px 8px", backgroundColor: "#53c68c", borderRadius:"16px", borderStyle: "none"}}>Get ESG benchmark document</button>
-              </TableCell>
-              <TableCell> 
-                <button onClick={()=> navigate("/pdf")} style={{padding: "4px 8px", backgroundColor: "#53c68c", borderRadius:"16px", borderStyle: "none"}}>Get PDF URL</button>
-              </TableCell>
-              
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-      </>
+      
+      
+      </> 
     );
   }
   
