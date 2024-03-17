@@ -50,7 +50,7 @@ function PDFUrl() {
     return (
         <>
        
-        <div style={{width: "400px", border:"2px solid black", height: "200px", backgroundColor: "", textAlign: "left", margin: "15px -100px", paddingTop:"25px", paddingLeft:"80px", color:"black"}}>
+        <div style={{width: "400px", border:"2px solid black", height: "200px", backgroundColor: "white", textAlign: "left", margin: "15px -100px", paddingTop:"25px", paddingLeft:"80px", color:"black"}}>
         <label>Entity name : </label>
         {/* <input type="text" name="entityName" value={esg1.entityName} onChange={(e) => handleChange(e)}/> */}
         <TextField id="standard-basic" label="Entity name" variant="standard" required name="entityName" value={esg1.entityName} onChange={(e) => handleChange(e)} style={{marginTop: "-20px"}}/>

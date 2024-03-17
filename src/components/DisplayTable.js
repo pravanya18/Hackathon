@@ -47,7 +47,7 @@ function DisplayTable({loading, esgData}) {
           </StyledTableRow>
           <StyledTableRow style={{backgroundColor:"#808080", color:"white"}}>
             <StyledTableCell>Company</StyledTableCell>
-            <StyledTableCell align="center">MSCI Sustainalytics</StyledTableCell>
+            <StyledTableCell align="center">Sustainalytics</StyledTableCell>
             <StyledTableCell align="center">Net zero target</StyledTableCell>
             <StyledTableCell align="center">Interim Emissions Reduction Target</StyledTableCell>
             <StyledTableCell align="center">Remewable Electricity Target</StyledTableCell>

@@ -21,7 +21,7 @@ function ESGBenchmarkIndicator() {
   const [loading, setLoading] =useState();
 
   const esgIndicatorValues = {
-   ESGScore:     ["MSCI Sustainalytics"],
+   ESGScore:     ["Sustainalytics"],
    Environment:   ["Net Zero Target", "Interim Emissions Reduction Target", "Renewable Electricity Target", "Circularity Stratergy"],
    Social:      [ "DE&I Target"],
    Goverance:   new Array("Health And Safety Target", "Supply Audit Target"),
@@ -51,7 +51,7 @@ function ESGBenchmarkIndicator() {
   };
 
     return (
-      <div style={{width: "500px", height: "370px", border:"2px solid black", backgroundColor: "", textAlign: "left", margin: "20px 130px", paddingTop:"25px", paddingLeft:"225px", color:"black"}}>
+      <div style={{width: "500px", height: "370px", border:"2px solid black", backgroundColor: "white", textAlign: "left", margin: "20px 130px", paddingTop:"25px", paddingLeft:"225px", color:"black"}}>
       <label>Entity name : </label>
       <input type="text" name="entityName" value={esgIndicator.entityName} onChange={(e) => handleChange(e)}/>
       <p />
